@@ -73,8 +73,8 @@ def main():
 		if response["StreamDescription"]["StreamStatus"] == "ACTIVE":
 			shard_id = response["StreamDescription"]["Shards"][0]["ShardId"]
 			break
-	else:
-		raise TimeoutError("Stream is still not active, " + bcolours.FAIL + "aborting" + bcolours.ENDC + "...")
+		else:
+			raise TimeoutError("Stream is still not active, " + bcolours.FAIL + "aborting" + bcolours.ENDC + "...")
 
 	print "Kinesis stream is " + bcolours.OKGREEN + "active" + bcolours.ENDC + ", starting server..."
 
